@@ -6,7 +6,7 @@ module.exports.get = async (req, res) => {
   try {
     const info = await Info.findOne({});
     if (!info)
-      return res.status(400).json({ error: 'Info not yet submitted.' });
+      return res.status(200).json({ error: 'Info not yet submitted.' });
     return res.status(200).json(info);
   } catch (err) {
     return res.status(400).json({ error: err.message });

@@ -11,6 +11,15 @@ const PORT = 4000;
 const MONGO_URI = process.env.MONGO_URI;
 
 /// MIDDLEWARE ///
+const cors = require('cors');
+const corsObj = {
+  origin: '*',
+  credentials: true,
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  exposedHeaders: ['Content-Type'],
+};
+app.use(cors(corsObj));
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(req.method, req.path);
