@@ -1,0 +1,14 @@
+{
+  "name": "hackyourportfolio2024",
+  "version": "1.0.0",
+  "description": "Use this project to generate a portfolio using the elusive but infinitely awesome power of Three.js!",
+  "main": "index.js",
+  "scripts": {
+    "setup": "cd ./server && npm i && touch .env && echo MONGO_URI=\"$MONGO_URI\" > .env && ../client && npm i",
+    "server_start": "cd server && npm run start",
+    "client_start": "cd client && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
