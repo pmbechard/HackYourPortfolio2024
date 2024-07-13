@@ -20,4 +20,6 @@ In the root directory:
 Visit [localhost on port 3000](http://localhost:3000/) in your web browser.
 
 ### How to
+
 Fill out all the fields with your desired information. After filling it out and on every subsequent visit, you should see your info in the generated portfolio site.
+
