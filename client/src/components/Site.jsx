@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Site = () => {
-  return <Html>Site</Html>;
+  return <Sphere />;
 };
 
 export default Site;
