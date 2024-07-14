@@ -18,7 +18,6 @@ function App() {
       try {
         const data = await fetch('http://localhost:4000/api/info');
         const json = await data.json();
-        console.log(json); // FIXME: Erase
         if (json.error) setInfoObj(null);
         else setInfoObj(json);
       } catch (e) {

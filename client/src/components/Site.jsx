@@ -11,6 +11,11 @@ const Site = ({ infoObj }) => {
   const [p1Hover, setP1Hover] = useState(false);
   const [p2Hover, setP2Hover] = useState(false);
   const [p3Hover, setP3Hover] = useState(false);
+  const [linkHover, setLinkHover] = useState(false);
+
+  useEffect(() => {
+    document.body.style.cursor = linkHover ? 'pointer' : 'auto';
+  }, [linkHover]);
 
   return (
     <>
@@ -148,8 +153,11 @@ const Site = ({ infoObj }) => {
             bevelSize={0.001}
             bevelOffset={0}
             bevelSegments={5}
+            onClick={() => window.open(`https://${infoObj.github}`, '_blank')}
+            onPointerOver={() => setLinkHover(true)}
+            onPointerLeave={() => setLinkHover(false)}
           >
-            {infoObj.github}
+            GitHub
             <meshStandardMaterial
               color={'cyan'}
               roughness={0.2}
@@ -169,8 +177,11 @@ const Site = ({ infoObj }) => {
             bevelSize={0.001}
             bevelOffset={0}
             bevelSegments={5}
+            onClick={() => window.open(`https://${infoObj.linkedin}`, '_blank')}
+            onPointerLeave={() => setLinkHover(false)}
+            onPointerOver={() => setLinkHover(true)}
           >
-            {infoObj.linkedin}
+            LinkedIn
             <meshStandardMaterial
               color={'cyan'}
               roughness={0.2}
@@ -190,8 +201,11 @@ const Site = ({ infoObj }) => {
             bevelSize={0.001}
             bevelOffset={0}
             bevelSegments={5}
+            onClick={() => window.open(`https://${infoObj.twitter}`, '_blank')}
+            onPointerOver={() => setLinkHover(true)}
+            onPointerLeave={() => setLinkHover(false)}
           >
-            {infoObj.twitter}
+            X Profile
             <meshStandardMaterial
               color={'cyan'}
               roughness={0.2}
