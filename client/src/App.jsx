@@ -40,7 +40,7 @@ function App() {
         fontSize={0.2}
         onClick={() => setIsLightMode(!isLightMode)}
       >
-        {isLightMode ? 'dark' : 'light'}
+        &#x263C;
       </Text>
 
       {isLightMode ? (
