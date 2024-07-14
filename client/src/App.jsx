@@ -23,8 +23,9 @@ function App() {
         else setInfoObj(json);
       } catch (e) {
         setInfoObj(null);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
     fetchInfo();
   }, []);
