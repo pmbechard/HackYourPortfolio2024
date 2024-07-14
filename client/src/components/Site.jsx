@@ -70,10 +70,15 @@ const Site = ({ infoObj }) => {
       </Float>
 
       {/* PROJECT 1 */}
-      <Float>
+      <Float
+        speed={1}
+        rotationIntensity={0.5}
+        floatIntensity={0.4}
+        floatingRange={[0.1, 0.1]}
+      >
         <Plane
           args={p1Hover ? [4.2, 3.2] : [4, 3]}
-          position={[-5, 0, 0]}
+          position={[-5, -0.3, 0]}
           onPointerEnter={() => setP1Hover(true)}
           onPointerLeave={() => setP1Hover(false)}
         >
@@ -92,10 +97,15 @@ const Site = ({ infoObj }) => {
       </Float>
 
       {/* PROJECT 2 */}
-      <Float>
+      <Float
+        speed={1}
+        rotationIntensity={0.5}
+        floatIntensity={0.4}
+        floatingRange={[0.1, 0.1]}
+      >
         <Plane
           args={p2Hover ? [4.2, 3.2] : [4, 3]}
-          position={[0, 0, 0]}
+          position={[0, -0.3, 0]}
           onPointerEnter={() => setP2Hover(true)}
           onPointerLeave={() => setP2Hover(false)}
         >
@@ -114,10 +124,15 @@ const Site = ({ infoObj }) => {
       </Float>
 
       {/* PROJECT 3 */}
-      <Float>
+      <Float
+        speed={1}
+        rotationIntensity={0.5}
+        floatIntensity={0.4}
+        floatingRange={[0.1, 0.1]}
+      >
         <Plane
           args={p3Hover ? [4.2, 3.2] : [4, 3]}
-          position={[5, 0, 0]}
+          position={[5, -0.3, 0]}
           onPointerEnter={() => setP3Hover(true)}
           onPointerLeave={() => setP3Hover(false)}
         >
