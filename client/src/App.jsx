@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import Site from './components/Site';
-import Form from './components/Form';
 import { Html, Sky, Stars, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
+import './App.css';
+
+import Site from './components/Site';
+import Form from './components/Form';
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
@@ -14,7 +15,6 @@ function App() {
 
   useEffect(() => {
     const fetchInfo = async () => {
-      setIsLoading(true);
       try {
         const data = await fetch('http://localhost:4000/api/info');
         const json = await data.json();
@@ -24,9 +24,10 @@ function App() {
       } catch (e) {
         setInfoObj(null);
       }
-      setIsLoading(false);
     };
+    setIsLoading(true);
     fetchInfo();
+    setIsLoading(false);
   }, []);
 
   return (
@@ -34,12 +35,12 @@ function App() {
       {/* LIGHT/DARK MODE */}
       <Text
         color={isLightMode ? 'black' : 'white'}
-        position-x={width / 2 - 0.7}
-        position-y={height / 2 - 0.3}
-        fontSize={0.3}
+        position-x={width / 2 - 0.3}
+        position-y={height / 2 - 0.2}
+        fontSize={0.2}
         onClick={() => setIsLightMode(!isLightMode)}
       >
-        {isLightMode ? 'Dark' : 'Light'}
+        {isLightMode ? 'dark' : 'light'}
       </Text>
 
       {isLightMode ? (
@@ -53,13 +54,18 @@ function App() {
 
       {/* PAGE DISPLAY */}
 
-      {infoObj ? (
-        <Site />
-      ) : (
-        <Html wrapperClass='input-form'>
-          <Form />
-        </Html>
-      )}
+      {!isLoading &&
+        (infoObj ? (
+          <Site infoObj={infoObj} />
+        ) : (
+          <Html wrapperClass='input-form'>
+            <Form />
+          </Html>
+        ))}
+
+      <ambientLight />
+      <directionalLight position={[4, 6, 7]} />
+      <hemisphereLight args={['orange', 'purple', 3]} />
     </>
   );
 }

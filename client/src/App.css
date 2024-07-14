@@ -56,3 +56,10 @@
   color: #efefef;
   cursor: pointer;
 }
+
+.err {
+  background-color: rgb(255, 180, 180);
+  color: red;
+  padding: 5px 10px;
+  border-radius: 8px;
+}

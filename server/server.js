@@ -38,4 +38,4 @@ mongoose
       console.log(`Listening at http://localhost:${PORT}`);
     });
   })
-  .catch(() => console.log('Could not connect to MongoDB'));
+  .catch((e) => console.log(`Could not connect to MongoDB\n\t${e}`));
