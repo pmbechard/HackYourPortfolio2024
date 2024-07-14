@@ -97,7 +97,7 @@ const Site = ({ infoObj }) => {
               />
             </Text>
           </Center>
-          <Center bottom right position-y={-0.75} position-z={0.1}>
+          <Center bottom right position-y={-1.5} position-z={0.1}>
             <Text scale={[0.15, 0.15, 0.15]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p1_description}
               <meshStandardMaterial
@@ -134,7 +134,7 @@ const Site = ({ infoObj }) => {
               />
             </Text>
           </Center>
-          <Center bottom right position-y={-0.75} position-z={0.1}>
+          <Center bottom right position-y={-1.5} position-z={0.1}>
             <Text scale={[0.15, 0.15, 0.15]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p2_description}
               <meshStandardMaterial
@@ -171,7 +171,7 @@ const Site = ({ infoObj }) => {
               />
             </Text>
           </Center>
-          <Center bottom right position-y={-0.75} position-z={0.1}>
+          <Center bottom right position-y={-1.5} position-z={0.1}>
             <Text scale={[0.15, 0.15, 0.15]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p3_description}
               <meshStandardMaterial
