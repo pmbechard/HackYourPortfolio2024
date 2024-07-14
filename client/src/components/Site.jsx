@@ -84,13 +84,27 @@ const Site = ({ infoObj }) => {
         >
           <meshBasicMaterial attach='material' map={img1} />
           <Center top right position-y={1.25} position-z={0.1}>
-            <Text color={'orange'} scale={[0.5, 0.5, 0.5]}>
+            <Text
+              color={'orange'}
+              scale={[0.35, 0.5, 0.5]}
+              font={'./fonts/ttf/kenpixel.ttf'}
+            >
               {infoObj.p1_title}
+              <meshStandardMaterial
+                color={'orange'}
+                roughness={0.2}
+                metalness={0.7}
+              />
             </Text>
           </Center>
           <Center bottom right position-y={-0.75} position-z={0.1}>
-            <Text color={'orange'} scale={[0.15, 0.15, 0.15]}>
+            <Text scale={[0.15, 0.15, 0.15]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p1_description}
+              <meshStandardMaterial
+                color={'cyan'}
+                roughness={0.2}
+                metalness={0.7}
+              />
             </Text>
           </Center>
         </Plane>
@@ -111,13 +125,23 @@ const Site = ({ infoObj }) => {
         >
           <meshBasicMaterial attach='material' map={img2} />
           <Center top right position-y={1.25} position-z={0.1}>
-            <Text color={'orange'} scale={[0.5, 0.5, 0.5]}>
+            <Text scale={[0.35, 0.5, 0.5]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p2_title}
+              <meshStandardMaterial
+                color={'orange'}
+                roughness={0.2}
+                metalness={0.7}
+              />
             </Text>
           </Center>
           <Center bottom right position-y={-0.75} position-z={0.1}>
-            <Text color={'orange'} scale={[0.15, 0.15, 0.15]}>
+            <Text scale={[0.15, 0.15, 0.15]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p2_description}
+              <meshStandardMaterial
+                color={'cyan'}
+                roughness={0.2}
+                metalness={0.7}
+              />
             </Text>
           </Center>
         </Plane>
@@ -138,13 +162,23 @@ const Site = ({ infoObj }) => {
         >
           <meshBasicMaterial attach='material' map={img3} />
           <Center top right position-y={1.25} position-z={0.1}>
-            <Text color={'orange'} scale={[0.5, 0.5, 0.5]}>
+            <Text scale={[0.35, 0.5, 0.5]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p3_title}
+              <meshStandardMaterial
+                color={'orange'}
+                roughness={0.2}
+                metalness={0.7}
+              />
             </Text>
           </Center>
           <Center bottom right position-y={-0.75} position-z={0.1}>
-            <Text color={'orange'} scale={[0.15, 0.15, 0.15]}>
+            <Text scale={[0.15, 0.15, 0.15]} font={'./fonts/ttf/kenpixel.ttf'}>
               {infoObj.p3_description}
+              <meshStandardMaterial
+                color={'cyan'}
+                roughness={0.2}
+                metalness={0.7}
+              />
             </Text>
           </Center>
         </Plane>
