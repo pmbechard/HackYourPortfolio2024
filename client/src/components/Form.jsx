@@ -18,8 +18,11 @@ const Form = () => {
   const [linkedin, setLinkedin] = useState('');
   const [twitter, setTwitter] = useState('');
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     setErr(null);
     try {
       const data = await fetch('http://localhost:4000/api/info', {
@@ -50,114 +53,116 @@ const Form = () => {
     } catch (e) {
       setErr(e.message);
     }
+    setIsLoading(false);
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h1>Site Info</h1>
-        <input
-          type='text'
-          name='name'
-          placeholder='Name'
-          required
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type='text'
-          name='tagline'
-          placeholder='Tagline'
-          required
-          onChange={(e) => setTagline(e.target.value)}
-        />
-
-        <input
-          type='text'
-          name='p1_title'
-          placeholder='Project 1 Title'
-          required
-          onChange={(e) => setP1_title(e.target.value)}
-        />
-        <input
-          type='text'
-          name='p1_description'
-          placeholder='Project 1 Description'
-          required
-          onChange={(e) => setP1_description(e.target.value)}
-        />
-        <input
-          type='text'
-          name='p1_img'
-          placeholder='Project 1 Image Link'
-          required
-          onChange={(e) => setP1_img(e.target.value)}
-        />
-
-        <input
-          type='text'
-          name='p2_title'
-          placeholder='Project 2 Title'
-          required
-          onChange={(e) => setP2_title(e.target.value)}
-        />
-        <input
-          type='text'
-          name='p2_description'
-          placeholder='Project 2 Description'
-          required
-          onChange={(e) => setP2_description(e.target.value)}
-        />
-        <input
-          type='text'
-          name='p2_img'
-          placeholder='Project 2 Image Link'
-          required
-          onChange={(e) => setP2_img(e.target.value)}
-        />
-
-        <input
-          type='text'
-          name='p3_title'
-          placeholder='Project 3 Title'
-          required
-          onChange={(e) => setP3_title(e.target.value)}
-        />
-        <input
-          type='text'
-          name='p3_description'
-          placeholder='Project 3 Description'
-          required
-          onChange={(e) => setP3_description(e.target.value)}
-        />
-        <input
-          type='text'
-          name='p3_img'
-          placeholder='Project 3 Image Link'
-          required
-          onChange={(e) => setP3_img(e.target.value)}
-        />
-
-        <input
-          type='text'
-          name='github'
-          placeholder='Github Link'
-          onChange={(e) => setGithub(e.target.value)}
-        />
-        <input
-          type='text'
-          name='linkedin'
-          placeholder='LinkedIn Profile'
-          onChange={(e) => setLinkedin(e.target.value)}
-        />
-        <input
-          type='text'
-          name='twitter'
-          placeholder='Twitter Page'
-          onChange={(e) => setTwitter(e.target.value)}
-        />
-
-        <input type='submit' />
-        {err && <p className='err'>{err}</p>}
+        {isLoading ? (
+          <h1>Loading...</h1>
+        ) : (
+          <>
+            <h1>Site Info</h1>
+            <input
+              type='text'
+              name='name'
+              placeholder='Name'
+              required
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type='text'
+              name='tagline'
+              placeholder='Tagline'
+              required
+              onChange={(e) => setTagline(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p1_title'
+              placeholder='Project 1 Title'
+              required
+              onChange={(e) => setP1_title(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p1_description'
+              placeholder='Project 1 Description'
+              required
+              onChange={(e) => setP1_description(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p1_img'
+              placeholder='Project 1 Image Link'
+              required
+              onChange={(e) => setP1_img(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p2_title'
+              placeholder='Project 2 Title'
+              required
+              onChange={(e) => setP2_title(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p2_description'
+              placeholder='Project 2 Description'
+              required
+              onChange={(e) => setP2_description(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p2_img'
+              placeholder='Project 2 Image Link'
+              required
+              onChange={(e) => setP2_img(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p3_title'
+              placeholder='Project 3 Title'
+              required
+              onChange={(e) => setP3_title(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p3_description'
+              placeholder='Project 3 Description'
+              required
+              onChange={(e) => setP3_description(e.target.value)}
+            />
+            <input
+              type='text'
+              name='p3_img'
+              placeholder='Project 3 Image Link'
+              required
+              onChange={(e) => setP3_img(e.target.value)}
+            />
+            <input
+              type='text'
+              name='github'
+              placeholder='Github Link'
+              onChange={(e) => setGithub(e.target.value)}
+            />
+            <input
+              type='text'
+              name='linkedin'
+              placeholder='LinkedIn Profile'
+              onChange={(e) => setLinkedin(e.target.value)}
+            />
+            <input
+              type='text'
+              name='twitter'
+              placeholder='Twitter Page'
+              onChange={(e) => setTwitter(e.target.value)}
+            />
+            <input type='submit' />
+            {err && <p className='err'>{err}</p>}
+          </>
+        )}
       </form>
     </>
   );

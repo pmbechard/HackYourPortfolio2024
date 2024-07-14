@@ -15,6 +15,7 @@ function App() {
 
   useEffect(() => {
     const fetchInfo = async () => {
+      setIsLoading(true);
       try {
         const data = await fetch('http://localhost:4000/api/info');
         const json = await data.json();
@@ -23,10 +24,9 @@ function App() {
       } catch (e) {
         setInfoObj(null);
       }
+      setIsLoading(false);
     };
-    setIsLoading(true);
     fetchInfo();
-    setIsLoading(false);
   }, []);
 
   return (
