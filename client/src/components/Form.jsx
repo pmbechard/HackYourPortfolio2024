@@ -46,6 +46,7 @@ const Form = () => {
       });
       const json = await data.json();
       if (data.status != 200) setErr(data.error);
+      location.reload();
     } catch (e) {
       setErr(e.message);
     }
